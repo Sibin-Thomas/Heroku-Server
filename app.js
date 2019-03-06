@@ -12,7 +12,9 @@ app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({extended:true}));
 
 mongoose.connect('mongodb+srv://thomas:<password>@cluster0-n5hf2.mongodb.net/test?retryWrites=true/bookmarkdb');
-
+app.get('/',(req,res)={
+	res.send('enter');
+})
 app.use('/user',routes);
 app.use('/bookmark',bookRoutes);
 
