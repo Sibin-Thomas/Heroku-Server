@@ -11,7 +11,10 @@ app.use(cors());
 app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({extended:true}));
 
-mongoose.connect('mongodb+srv://sibin:st654321@cluster0-n5hf2.mongodb.net/test?retryWrites=true/bookmarkdb');
+mongoose.connect('mongodb+srv://sibin:st654321@cluster0-n5hf2.mongodb.net/test?retryWrites=true/bookmarkdb',(err)=>{
+	if (err) throw err;
+
+});
 app.get('/',(req,res)=>{
 	res.send('enter');
 })

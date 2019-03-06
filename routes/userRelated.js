@@ -18,6 +18,7 @@ router.post('/auth',(req,res)=>{
 });
 
 router.post('/addUser',(req,res)=>{
+	console.log('enterted func');
 	var user = new User({username:req.body.name,password:req.body.pass,status:'active'});
 	user.save((err,user)=>{
 		if (err) throw err;
