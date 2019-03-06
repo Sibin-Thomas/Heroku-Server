@@ -13,7 +13,7 @@ app.use(bodyparser.urlencoded({extended:true}));
 
 mongoose.connect('mongodb+srv://sibin:st654321@cluster0-n5hf2.mongodb.net/test?retryWrites=true/bookmarkdb',(err)=>{
 	if (err) throw err;
-
+	console.log('connection established');
 });
 app.get('/',(req,res)=>{
 	res.send('enter');
