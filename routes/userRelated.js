@@ -4,6 +4,10 @@ const mongoose = require('mongoose');
 const Bookmark = require('../models/bookmark');
 const User = require('../models/user');
 
+router.get('/',(req,res)=>{
+	res.send('haha');
+})
+
 router.post('/auth',(req,res)=>{
 	User.findOne({username:req.body.name,password:req.body.pass},(err,user)=>{
 		if (user == null) 
