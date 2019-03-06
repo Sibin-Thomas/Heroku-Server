@@ -11,8 +11,8 @@ app.use(cors());
 app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({extended:true}));
 
-mongoose.Promise = global.Promise;
-mongoose.connect('mongodb+srv://sibin:st654321@cluster0-n5hf2.mongodb.net/bookmarkdb?retryWrites=true',(err)=>{
+mongoose.connect('mongodb+srv://sibin:st654321@cluster0-n5hf2.mongodb.net/bookmarkdb?retryWrites=true').then(
+	(err)=>{
 	if (err) throw err;
 	console.log('connection established');
 });
