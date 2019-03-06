@@ -16,4 +16,4 @@ mongoose.connect('mongodb://localhost/bookmarkdb');
 app.use('/user',routes);
 app.use('/bookmark',bookRoutes);
 
-app.listen(8000,()=>console.log('server running'));
+app.listen(process.env.PORT ||8000,()=>console.log('server running'));
