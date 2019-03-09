@@ -15,6 +15,10 @@ app.use(bodyparser.urlencoded({extended:true}));
 mongoose.connect('mongodb+srv://sibin:st654321@cluster0-n5hf2.mongodb.net/bookmarkdb?retryWrites=true',(err)=>{
 	if (err) throw err;
 });
+
+if (process.env.NODE_ENV === 'production') {
+	app.use(express.static('client/build'));
+}
 app.get('/',(req,res)=>{
 	res.send('enter');
 })
