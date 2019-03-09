@@ -16,7 +16,7 @@ mongoose.connect('mongodb+srv://sibin:st654321@cluster0-n5hf2.mongodb.net/bookma
 	if (err) throw err;
 });
 
-app.use(express.static(__dirname));
+
 
 app.use('/user',routes);
 app.use('/bookmark',bookRoutes);
