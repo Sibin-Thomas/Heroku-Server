@@ -16,17 +16,13 @@ mongoose.connect('mongodb+srv://sibin:st654321@cluster0-n5hf2.mongodb.net/bookma
 	if (err) throw err;
 });
 
-if (process.env.NODE_ENV === 'production') {
-	app.use(express.static('client/build'));
-}
+app.use(express.static(__dirname + '/dist/server'));
 
-app.get('*',(req, res) => {
-res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+app.get('/*', function(req,res) {
+    
+res.sendFile(path.join(__dirname+'/dist/server/index.html'));
 });
 
-app.get('/',(req,res)=>{
-	res.send('enter');
-})
 app.use('/user',routes);
 app.use('/bookmark',bookRoutes);
 
