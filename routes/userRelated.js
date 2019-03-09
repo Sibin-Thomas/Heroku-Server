@@ -18,11 +18,11 @@ router.post('/auth',(req,res)=>{
 });
 
 router.post('/addUser',(req,res)=>{
-	var user = new User({username:req.body.name,password:req.body.pass,status:'active'});
-	user.save((err,user)=>{
-		if (err) throw err;
-		res.send(user);
-	});
+	var d = new User({"username":req.body.name,"password":req.body.pass,"status":'active'});
+	d.save((err,usr)=>{
+		if(err)throw err;
+		res.send(usr);
+	})
 })
 
 router.post('/doesUserExist',(req,res)=>{
