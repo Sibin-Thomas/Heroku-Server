@@ -21,7 +21,7 @@ router.post('/addUser',(req,res)=>{
 	var d = new User({"username":req.body.name,"password":req.body.pass,"status":'active'});
 	d.save((err,usr)=>{
 		if(err)throw err;
-		res.send(usr);
+		res.send('User added');
 	})
 })
 
